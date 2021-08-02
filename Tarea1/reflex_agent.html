@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        <style>
+            div.scroll {
+                height: 80vh;
+                overflow-x: hidden;
+                overflow-y: auto;
+                text-align:justify;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-6">
+                    <h2>Reflex agent</h2>
+                    <hr>
+                    <div class="scroll">
+                        <p id="log"></p>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>State</th>
+                                <th>Value</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>State 0</td>
+                                <td>[A, D, D]</td>
+                            </tr>
+                            <tr>
+                                <td>State 1</td>
+                                <td>[A, C, D]</td>
+                            </tr>
+                            <tr>
+                                <td>State 2</td>
+                                <td>[B, C, D]</td>
+                            </tr>
+                            <tr>
+                                <td>State 3</td>
+                                <td>[B, C, C]</td>
+                            </tr>
+                            <tr>
+                                <td>State 4</td>
+                                <td>[A, C, C]</td>
+                            </tr>
+                            <tr>
+                                <td>State 5</td>
+                                <td>[A, D, C]</td>
+                            </tr>
+                            <tr>
+                                <td>State 6</td>
+                                <td>[B, D, D]</td>
+                            </tr>
+                            <tr>
+                                <td>State 7</td>
+                                <td>[B, D, C]</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p id="summary"></p>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="reflex_agent.js"></script>
+    </body>
+</html>
