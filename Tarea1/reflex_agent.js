@@ -18,6 +18,8 @@ function test(states) {
     document.getElementById("log").innerHTML += `<br><strong>State:</strong> ${states[1]} - ${states[2]}`;
     document.getElementById("log").innerHTML += `<br><strong>Location: ${location}</strong> | Action: ${action}<br>`;
 
+    count();
+
     if (action == "CLEAN"){
     	if (location == "A")
             states[1] = "CLEAN";
@@ -28,7 +30,6 @@ function test(states) {
     else if (action == "LEFT")
       states[0] = "A";
 
-    count();
 
     randomDirty();
 
@@ -54,7 +55,7 @@ function test(states) {
     </table>`;
 
     if(flag)
-        document.getElementById("log").innerHTML += `<br>TERMINADO`;
+        document.getElementById("log").innerHTML += `<br><strong>FINISHED</strong>`;
     else
         setTimeout(() => { test(states); }, 2000);
 }
@@ -92,12 +93,17 @@ function count() {
 }
 
 function randomDirty() {
-    let random = Math.floor(Math.random() * 3);
+    let random = Math.floor(Math.random() * 4);
     console.log(random);
     if(random === 0){//Dirty A
         states[1] = "DIRTY";
     }else if(random === 1){//Dirty B
         states[2] = "DIRTY";
+    }else if(random === 2 ){//Both but make another random
+        if(Math.random() < 0.25){
+            states[1] = "DIRTY";
+            states[2] = "DIRTY";
+        }
     }
 }
 
@@ -111,6 +117,6 @@ function checkIfDone(array) {
 
 //Initial state and counter
 const states = ["A","DIRTY","DIRTY"];
-const counter = [1, 0, 0, 0, 0, 0, 0, 0];
+const counter = [0, 0, 0, 0, 0, 0, 0, 0];
 
 test(states);
